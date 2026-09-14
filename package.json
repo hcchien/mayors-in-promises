@@ -1,0 +1,20 @@
+{
+  "name": "mayors-in-promises",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit && node --check public/app.js && go test ./...",
+    "db:migrate:local": "wrangler d1 migrations apply mayors-in-promises --local",
+    "db:migrate:remote": "wrangler d1 migrations apply mayors-in-promises --remote",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "seed": "go run ./cmd/seedgen --input ./縣市首長當選人政見整理.xlsx --output ./migrations/0002_seed.sql"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "latest",
+    "typescript": "latest",
+    "wrangler": "latest"
+  }
+}
+

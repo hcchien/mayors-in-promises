@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="檢視最近三屆六都市長當選人的選舉政見，分享你對政見是否兌現的體感。">
+    <meta name="theme-color" content="#f6f1e7">
+    <title>政見支票｜市長的承諾兌現了嗎？</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要內容</a>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="政見支票首頁">
+        <span class="brand-mark" aria-hidden="true">✓</span>
+        <span>政見支票</span>
+      </a>
+      <div id="account" class="account" aria-live="polite"></div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">2014—2022 六都市長政見</p>
+        <h1 id="hero-title">這張支票，<br><em>兌現了嗎？</em></h1>
+        <p class="hero-copy">從你的生活經驗出發，看看市長選前提出的承諾，市民怎麼評價。</p>
+        <dl class="hero-stats" id="summary-stats">
+          <div><dt>政見項目</dt><dd>134</dd></div>
+          <div><dt>累積投票</dt><dd>—</dd></div>
+          <div><dt>參與市民</dt><dd>—</dd></div>
+        </dl>
+      </section>
+
+      <section class="explorer" aria-labelledby="explorer-title">
+        <div class="section-heading">
+          <div>
+            <p class="step-label">01 選擇年份</p>
+            <h2 id="explorer-title">哪一屆市長？</h2>
+          </div>
+          <div id="year-tabs" class="year-tabs" role="tablist" aria-label="選舉年份"></div>
+        </div>
+
+        <div class="county-section">
+          <p class="step-label">02 選擇縣市</p>
+          <div id="county-grid" class="county-grid" aria-live="polite"></div>
+        </div>
+
+        <div id="candidate-view" class="candidate-view" hidden></div>
+      </section>
+
+      <section class="method">
+        <p class="step-label">投票方式</p>
+        <div class="method-grid">
+          <h2>一人一項一票，<br>從熟悉的地方開始。</h2>
+          <div>
+            <p>使用 Google 帳號登入後，設定出生地與工作地，最多兩個縣市。每個年份的每一項政見只保留你的一票；若改變看法，可以更新原本的選擇。</p>
+            <p>結果代表參與者的生活體感，不是官方施政成效認定。政見文字依選舉公報整理。</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>政見支票</span>
+      <span>資料涵蓋 2014、2018、2022 六都市長當選人</span>
+    </footer>
+
+    <dialog id="county-dialog" aria-labelledby="county-dialog-title">
+      <form id="county-form" method="dialog">
+        <button class="dialog-close" value="cancel" aria-label="關閉">×</button>
+        <p class="step-label">投票資格設定</p>
+        <h2 id="county-dialog-title">你熟悉哪兩個地方？</h2>
+        <p>可只填一項；若出生與工作在同一縣市，也只要選一次。</p>
+        <label>
+          出生地
+          <select id="birth-county" name="birthCountyId"></select>
+        </label>
+        <label>
+          工作地
+          <select id="work-county" name="workCountyId"></select>
+        </label>
+        <p id="county-form-error" class="form-error" role="alert"></p>
+        <button class="primary-button" type="submit">儲存設定</button>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

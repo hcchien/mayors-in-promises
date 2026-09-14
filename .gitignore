@@ -1,0 +1,6 @@
+node_modules/
+.wrangler/
+.wrangler-config/
+.dev.vars
+dist/
+縣市首長當選人政見整理.xlsx

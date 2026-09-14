@@ -1,0 +1,28 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "mayors-in-promises",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-14",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/auth/*", "/healthz"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "mayors-in-promises",
+      "database_id": "b2c51890-ed74-4e2d-9bae-7f1bf37fdd87"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "CACHE",
+      "id": "366cb33bca414873a98f6ab220bd7c3b"
+    }
+  ],
+  "vars": {
+    "CATALOG_VERSION": "2026-09-14",
+    "GOOGLE_REDIRECT_URI": "https://mayors-in-promises.mayors-in-promises.workers.dev/auth/google/callback"
+  }
+}
